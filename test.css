@@ -1,0 +1,14 @@
+div{
+    background-color: skyblue;
+    color: #FFF;
+    width: 200px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+}
+.changeColor{
+    background-color: red;
+}
+.changeLength{
+    width: 300px;
+}

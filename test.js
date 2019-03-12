@@ -7,5 +7,11 @@ new Vue({
     methods : {
     },
     computed : {
+        change : function () {
+            return {
+                changeColor : this.changeColor,
+                changeLength : this .changeLength
+            }
+        }
     }
 })

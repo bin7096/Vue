@@ -6,24 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>L-2</title>
     <script src="https://unpkg.com/vue"></script>
-    <style>
-        #blueDiv{
-            background-color: skyblue;
-            color: #FFF;
-            width: 200px;
-            height: 80px;
-            line-height: 80px;
-            text-align: center;
-        }
-        .redDiv{
-            background-color: red;
-        }
-    </style>
+    <link rel="stylesheet" href="test.css">
 </head>
 <body>
     <!-- vue-app是根容器 -->
     <div id="vue-app">
-        <div id="blueDiv" v-bind:class="{redDiv:changeColor}" @click="changeColor = !changeColor">点击修改颜色</div>
+        <!-- 使用v-bind绑定class属性，接收change返回的对象 -->
+        <div id="blueDiv" v-bind:class="change" @click="changeColor = !changeColor">点击修改颜色</div>
+        <button @click="changeLength = !changeLength">点击修改长度</button>
     </div>
 </body>
 <script src="test.js"></script>

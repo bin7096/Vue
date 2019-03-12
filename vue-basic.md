@@ -440,3 +440,60 @@ new Vue({
 
 ## L-5
 >### #动态绑定CSS样式
+```js
+new Vue({
+    el : '#vue-app',
+    data : {
+        changeColor : false,
+        changeLength : false
+    },
+    methods : {
+    },
+    computed : {
+        change : function () {
+            return {
+                changeColor : this.changeColor,
+                changeLength : this .changeLength
+            }
+        }
+    }
+})
+```
+```css
+div{
+    background-color: skyblue;
+    color: #FFF;
+    width: 200px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+}
+.changeColor{
+    background-color: red;
+}
+.changeLength{
+    width: 300px;
+}
+```
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>L-2</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <!-- vue-app是根容器 -->
+    <div id="vue-app">
+        <!-- 使用v-bind绑定class属性，接收change返回的对象 -->
+        <div id="blueDiv" v-bind:class="change" @click="changeColor = !changeColor">点击修改颜色</div>
+        <button @click="changeLength = !changeLength">点击修改长度</button>
+    </div>
+</body>
+<script src="test.js"></script>
+</html>
+```
