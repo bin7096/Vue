@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>L-2</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+        #blueDiv{
+            background-color: skyblue;
+            color: #FFF;
+            width: 200px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+        }
+        .redDiv{
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
-    
+    <!-- vue-app是根容器 -->
+    <div id="vue-app">
+        <div id="blueDiv" v-bind:class="{redDiv:changeColor}" @click="changeColor = !changeColor">点击修改颜色</div>
+    </div>
 </body>
+<script src="test.js"></script>
 </html>
