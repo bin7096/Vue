@@ -2,6 +2,8 @@
 ## L-1
 > ### #实例化Vue
 对象
+
+> <font color="orange">js>>></font>
 ```js
 new Vue({
     el : "#vue-app",    //el:element 需要获取的元素，一定是HTML中的的根容器元素
@@ -18,6 +20,7 @@ new Vue({
     }
 })
 ```
+> <font color="skyblue">html >>></font>
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -41,6 +44,8 @@ new Vue({
 
 ## L-2
 > ### #Vue属性绑定
+
+> <font color="orange">js>>></font>
 ```js
 new Vue({
     el : "#vue-app",    //el:element 需要获取的元素，一定是HTML中的的根容器元素
@@ -51,6 +56,7 @@ new Vue({
     }
 })
 ```
+> <font color="skyblue">html >>></font>
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -78,6 +84,8 @@ new Vue({
 ```
 ## L-3
 > ### #事件绑定
+
+> <font color="orange">js>>></font>
 ```js
 new Vue({
     el : '#vue-app',
@@ -109,6 +117,7 @@ new Vue({
 })
 ```
 
+> <font color="skyblue">html >>></font>
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -116,7 +125,7 @@ new Vue({
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>L-2</title>
+    <title>L-3</title>
     <script src="https://unpkg.com/vue"></script>
     <style>
         #xy{
@@ -159,6 +168,7 @@ new Vue({
 * self    只当在 event.target 是当前元素自身时触发处理函数
 * once    只允许触发一次
 * passive 与prevent作用相反，不能与prevent同时使用
+> <font color="skyblue">html >>></font>
 ```html
 <!-- 阻止单击事件继续传播 -->
 <a v-on:click.stop="doThis"></a>
@@ -181,6 +191,7 @@ new Vue({
 <div v-on:click.self="doThat">...</div>
 ```
 > 2.1.4 新增
+> <font color="skyblue">html >>></font>
 ```html
 <!-- 点击事件将只会触发一次 -->
 <a v-on:click.once="doThis"></a>
@@ -190,6 +201,7 @@ new Vue({
 > 2.3.0 新增
 
 Vue 还对应 addEventListener 中的 passive 选项提供了 .passive 修饰符。
+> <font color="skyblue">html >>></font>
 ```html
 <!-- 滚动事件的默认行为 (即滚动行为) 将会立即触发 -->
 <!-- 而不会等待 `onScroll` 完成  -->
@@ -211,12 +223,14 @@ Vue 还对应 addEventListener 中的 passive 选项提供了 .passive 修饰符
 * right
 
 在监听键盘事件时，我们经常需要检查常见的键值。Vue 允许为 v-on 在监听键盘事件时添加按键修饰符：
+> <font color="skyblue">html >>></font>
 ```html
 <!-- 只有在 `keyCode` 是 13 时调用 `vm.submit()` -->
 <input v-on:keyup.13="submit">
 ```
 
 记住所有的 keyCode 比较困难，所以 Vue 为最常用的按键提供了别名：
+> <font color="skyblue">html >>></font>
 ```html
 <!-- 同上 -->
 <input v-on:keyup.enter="submit">
@@ -227,6 +241,8 @@ Vue 还对应 addEventListener 中的 passive 选项提供了 .passive 修饰符
 
 可以通过全局 config.keyCodes 对象自定义按键修饰符别名：
 
+
+> <font color="orange">js>>></font>
 ```js
 // 可以使用 `v-on:keyup.f1`
 Vue.config.keyCodes.f1 = 112
@@ -238,6 +254,8 @@ Vue.config.keyCodes.f1 = 112
 > 方法1
 
 使用ref属性获取输入值
+
+> <font color="orange">js>>></font>
 ```js
 new Vue({
     el : '#vue-app',
@@ -258,6 +276,7 @@ new Vue({
     }
 })
 ```
+> <font color="skyblue">html >>></font>
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -265,7 +284,7 @@ new Vue({
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>L-2</title>
+    <title>L-5</title>
     <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
@@ -284,6 +303,8 @@ new Vue({
 > 方法2
 
 使用v-model属性进行双向绑定
+
+> <font color="orange">js>>></font>
 ```js
 new Vue({
     el : '#vue-app',
@@ -295,6 +316,7 @@ new Vue({
     }
 })
 ```
+> <font color="skyblue">html >>></font>
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -302,7 +324,7 @@ new Vue({
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>L-2</title>
+    <title>L-5</title>
     <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
@@ -319,7 +341,7 @@ new Vue({
 </html>
 ```
 
-## L-5
+## L-6
 >### 计算属性computed
 
 <font color="red">
@@ -335,6 +357,8 @@ Vue是将dom拷贝一份形成虚拟dom。
 </font>
 
 > methods方法
+
+> <font color="orange">js>>></font>
 ```js
 new Vue({
     el : '#vue-app',
@@ -359,6 +383,7 @@ new Vue({
     }
 })
 ```
+> <font color="skyblue">html >>></font>
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -366,7 +391,7 @@ new Vue({
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>L-2</title>
+    <title>L-6</title>
     <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
@@ -385,6 +410,8 @@ new Vue({
 </html>
 ```
 > computed计算属性
+
+> <font color="orange">js >>></font>
 ```js
 new Vue({
     el : '#vue-app',
@@ -411,6 +438,7 @@ new Vue({
     }
 })
 ```
+> <font color="skyblue">html >>></font>
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -418,7 +446,7 @@ new Vue({
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>L-2</title>
+    <title>L-6</title>
     <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
@@ -438,8 +466,10 @@ new Vue({
 </html>
 ```
 
-## L-5
+## L-7
 >### #动态绑定CSS样式
+
+> <font color="orange">js>>></font>
 ```js
 new Vue({
     el : '#vue-app',
@@ -459,6 +489,7 @@ new Vue({
     }
 })
 ```
+> <font color="LawnGreen">css >>></font>
 ```css
 div{
     background-color: skyblue;
@@ -475,6 +506,7 @@ div{
     width: 300px;
 }
 ```
+> <font color="skyblue">html >>></font>
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -482,7 +514,7 @@ div{
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>L-2</title>
+    <title>L-7</title>
     <script src="https://unpkg.com/vue"></script>
     <link rel="stylesheet" href="test.css">
 </head>
@@ -492,6 +524,58 @@ div{
         <!-- 使用v-bind绑定class属性，接收change返回的对象 -->
         <div id="blueDiv" v-bind:class="change" @click="changeColor = !changeColor">点击修改颜色</div>
         <button @click="changeLength = !changeLength">点击修改长度</button>
+    </div>
+</body>
+<script src="test.js"></script>
+</html>
+```
+
+## L-8
+>### #条件渲染v-if/v-show
+
+> <font color="orange">js>>></font>
+```js
+new Vue({
+    el : '#vue-app',
+    data : {
+        error : false,
+        success : false
+    },
+    methods : {
+    },
+    computed : {
+    }
+})
+```
+> <font color="skyblue">html >>></font>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>L-2</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <!-- vue-app是根容器 -->
+    <div id="vue-app">
+        <!-- v-if相对v-show具有更高的初始化渲染效率，条件不成立的情况下，对应节点不会存在于dom结构中，最适用于结果不发生变化的判断条件 -->
+        <p style="font-size:2rem;font-weight:bold;">v-if</p>
+        <button @click="error = !error">置反error</button>
+        <button @click="success = !success">置反success</button>
+        <p v-if="error">Error</p>
+        <p v-if="success">Success</p>
+        <hr/>
+        <!-- v-if/v-else-if类似于if/else -->
+        <p style="font-size:2rem;font-weight:bold;">v-if/v-else-if</p>
+        <p v-if="error">网络连接失败：error</p>
+        <p v-else-if="success">网络连接成功：success</p>
+        <!-- v-show相对v-if有更好的后期渲染效率，条件不成立的情况下，对应节点使用display：none样式进行隐藏，最适用经常发生变化的判断条件 -->
+        <p style="font-size:2rem;font-weight:bold;">v-if/v-else-if</p>
+        <p v-show="error">v-show : error</p>
+        <p v-show="success">v-show : success</p>
     </div>
 </body>
 <script src="test.js"></script>

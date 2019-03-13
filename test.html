@@ -6,14 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>L-2</title>
     <script src="https://unpkg.com/vue"></script>
-    <link rel="stylesheet" href="test.css">
 </head>
 <body>
     <!-- vue-app是根容器 -->
     <div id="vue-app">
-        <!-- 使用v-bind绑定class属性，接收change返回的对象 -->
-        <div id="blueDiv" v-bind:class="change" @click="changeColor = !changeColor">点击修改颜色</div>
-        <button @click="changeLength = !changeLength">点击修改长度</button>
+        <!-- v-if相对v-show具有更高的初始化渲染效率，条件不成立的情况下，对应节点不会存在于dom结构中，最适用于结果不发生变化的判断条件 -->
+        <p style="font-size:2rem;font-weight:bold;">v-if</p>
+        <button @click="error = !error">置反error</button>
+        <button @click="success = !success">置反success</button>
+        <p v-if="error">Error</p>
+        <p v-if="success">Success</p>
+        <hr/>
+        <!-- v-if/v-else-if类似于if/else -->
+        <p style="font-size:2rem;font-weight:bold;">v-if/v-else-if</p>
+        <p v-if="error">网络连接失败：error</p>
+        <p v-else-if="success">网络连接成功：success</p>
+        <!-- v-show相对v-if有更好的后期渲染效率，条件不成立的情况下，对应节点使用display：none样式进行隐藏，最适用经常发生变化的判断条件 -->
+        <p style="font-size:2rem;font-weight:bold;">v-if/v-else-if</p>
+        <p v-show="error">v-show : error</p>
+        <p v-show="success">v-show : success</p>
     </div>
 </body>
 <script src="test.js"></script>
