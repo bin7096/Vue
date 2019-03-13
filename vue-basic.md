@@ -1,9 +1,13 @@
 # Vue
+> **<font color="red">CDN<font face="STXingkai">方式引入：</font></font>**
+```html
+<script src="https://unpkg.com/vue"></script>
+```
 ## L-1
 > ### #实例化Vue
 对象
 
-> <font color="orange">js>>></font>
+> <font color="orange">js >>></font>
 ```js
 new Vue({
     el : "#vue-app",    //el:element 需要获取的元素，一定是HTML中的的根容器元素
@@ -45,7 +49,7 @@ new Vue({
 ## L-2
 > ### #Vue属性绑定
 
-> <font color="orange">js>>></font>
+> <font color="orange">js >>></font>
 ```js
 new Vue({
     el : "#vue-app",    //el:element 需要获取的元素，一定是HTML中的的根容器元素
@@ -85,7 +89,7 @@ new Vue({
 ## L-3
 > ### #事件绑定
 
-> <font color="orange">js>>></font>
+> <font color="orange">js >>></font>
 ```js
 new Vue({
     el : '#vue-app',
@@ -242,7 +246,7 @@ Vue 还对应 addEventListener 中的 passive 选项提供了 .passive 修饰符
 可以通过全局 config.keyCodes 对象自定义按键修饰符别名：
 
 
-> <font color="orange">js>>></font>
+> <font color="orange">js >>></font>
 ```js
 // 可以使用 `v-on:keyup.f1`
 Vue.config.keyCodes.f1 = 112
@@ -255,7 +259,7 @@ Vue.config.keyCodes.f1 = 112
 
 使用ref属性获取输入值
 
-> <font color="orange">js>>></font>
+> <font color="orange">js >>></font>
 ```js
 new Vue({
     el : '#vue-app',
@@ -304,7 +308,7 @@ new Vue({
 
 使用v-model属性进行双向绑定
 
-> <font color="orange">js>>></font>
+> <font color="orange">js >>></font>
 ```js
 new Vue({
     el : '#vue-app',
@@ -358,7 +362,7 @@ Vue是将dom拷贝一份形成虚拟dom。
 
 > methods方法
 
-> <font color="orange">js>>></font>
+> <font color="orange">js >>></font>
 ```js
 new Vue({
     el : '#vue-app',
@@ -469,7 +473,7 @@ new Vue({
 ## L-7
 >### #动态绑定CSS样式
 
-> <font color="orange">js>>></font>
+> <font color="orange">js >>></font>
 ```js
 new Vue({
     el : '#vue-app',
@@ -533,7 +537,7 @@ div{
 ## L-8
 >### #条件渲染v-if/v-show
 
-> <font color="orange">js>>></font>
+> <font color="orange">js >>></font>
 ```js
 new Vue({
     el : '#vue-app',
@@ -555,7 +559,7 @@ new Vue({
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>L-2</title>
+    <title>L-8</title>
     <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
@@ -576,6 +580,73 @@ new Vue({
         <p style="font-size:2rem;font-weight:bold;">v-if/v-else-if</p>
         <p v-show="error">v-show : error</p>
         <p v-show="success">v-show : success</p>
+    </div>
+</body>
+<script src="test.js"></script>
+</html>
+```
+
+## L-9
+>### #列表渲染v-for
+
+> <font color="orange">js >>></font>
+```js
+new Vue({
+    el : '#vue-app',
+    data : {
+        users : ['zhangsan', 'lisi', 'wangwu', 'zhaoliu'],
+        infos : [
+            {name : 'zhangsan', age : 20},
+            {name : 'lisi',     age : 21},
+            {name : 'wangwu',   age : 22},
+            {name : 'zhaoliu',  age : 23}
+        ]
+    },
+    methods : {
+    },
+    computed : {
+    }
+})
+```
+> <font color="skyblue">html >>></font>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>L-9</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <!-- vue-app是根容器 -->
+    <div id="vue-app">
+        <!-- 使用v-for渲染数组数据 -->
+        <p v-for="u in users">{{u}}</p>
+        <hr />
+        <!-- v-for中第二个参数（index）为下标 -->
+        <p v-for="(u,index) in users">{{index}}. {{u}}</p>
+        <hr />
+        <!-- 下标从1开始 -->
+        <p v-for="(u,index) in users">{{index + 1}}. {{u}}</p>
+        <hr />
+        <!-- 使用v-for渲染对象数据 -->
+        <div v-for="i in infos">
+            <p>姓名：{{i.name}}</p>
+            <p>年龄：{{i.age}}</p>
+        </div>
+        <hr />
+        <!-- 使用key/val遍历子对象 -->
+        <div v-for="info in infos">
+            <p v-for="(val, key) in info">{{key}} : {{val}}</p>
+        </div>
+        <hr />
+        <!-- 使用template标签替代div标签，可节省列表渲染过多的div造成的开销 -->
+        <template v-for="i in infos">
+            <p>姓名：{{i.name}}</p>
+            <p>年龄：{{i.age}}</p>
+        </template>
     </div>
 </body>
 <script src="test.js"></script>
