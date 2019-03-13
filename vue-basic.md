@@ -56,7 +56,7 @@ new Vue({
     data : {            //用于数据的存储
         name : 'bin',
         website : 'www.qq.com',
-        websiteTag : '<a href="www.qq.com">链接</a>
+        websiteTag : '<a href="www.qq.com">链接</a>'
     }
 })
 ```
